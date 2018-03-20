@@ -1,0 +1,121 @@
+-height: 2 m
+-incline walk: 35 deg
+-jump height: 1 m
+-jump height with boost: 1.5 m
+-sprint speed: 9 m/s
+-walk speed: 1 m/s
+
+cm y axis collision detection
+name:polaris
+
+laser tag bot
+
+new favicon
+
+Moonlight Off the Water
+develop melody
+
+collision detection
+mini-map
+mobs
+skeletal animation
+terrain
+
+aim-accuracy
+anti-cloack
+high-energy consumption
+enhanced sight
+soft-steps
+
+atb:
+particle designer
+particle system
+
+particle system allows you to place an emitter and decide how the particles act
+
+custom loadouts
+settings required to host mp game:
+Regular{
+-game type
+-map
+-min players
+-max players
+}
+Zombies{
+
+}
+
+game modes include tagger, assassin
+
+overflow question{
+title:
+Creating a multiplayer over-network game in Java
+content:
+I am working on a video game and wanted to add multiplayer. I wanted people to be able to play against others over the net.
+Option 1:
+Games are hosted by a web server somehow... and random players can join the game
+Option 2:
+Games are hosted by a certain person. Another person who doesn't have to know the ip of the other, can join the hosted game.
+I would like to know how i could achieve these because I can't find anywhere that explains either. Maybe I am not searching hard enough.
+If more information is required, just tell me and I can provide it.
+}
+
+atb can make guns by setting fire point, hand holds etc
+define handhold and nozzle and animations/positions
+button switches view to player fp
+atb can make bi-image particles, mono-image particles, cubic particles
+
+scale weapons to accurate size compared to 2 unit person
+
+cloak energy drain (per second){
+standing still: 5
+crouching: 2
+proning: 1
+walking: 7
+sprinting: 10
+crouch walking: 7
+prone crawling: 6
+}
+if you are shot, enemies can see you at 33% opacity
+if you get hit by an emp, your cloak turns off
+if you get hit by a pulse grenade, your energy drains to nothing
+
+first 20 people get a code that unlocks the sniper rifle for multiplayer
+for 2 months before the forerunner release, feature trailors on youtube
+
+-tridemDisplayDemo
+-achievements
+-tutorial
+-render weapons at 0 0 0 with offsets
+-error with tridemDisplay
+
+window dimensions: 1280, 720
+
+projects {
+
+-MechVision (MV - ENVY)
+-Exoskeleton
+
+}
+
+Practicraft
+
+Launcher {
+
+-The captain is standing on a tall sand dune looking at a broken down city in the distance
+
+-As if looking through the helmet. The Y-light flickers on and has dust and cracks and rain on it.
+It is raining and there is tall grass around.
+
+}
+
+Control scheme for forerunner android {
+
+-movement joystick on left part of screen. NEEDS TO TAKE UP AS LITTLE SPACE AS POSSIBLE
+-whole right part of screen except buttons is looking
+-fire button circle
+-aim button connected to fire button but to SE
+-jump button at bottom middle
+-knife button connected to fire button but to the SW
+
+}

@@ -1,0 +1,9 @@
+x
+y
+z
+rotX
+rotY
+rotZ
+all mob x,y,z,rotX,rotY,rotZ
+all guns on ground x,y,z,rotX,rotY,rotZ
+player guns ammo in clip,ammo

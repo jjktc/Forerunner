@@ -1,0 +1,89 @@
+#|-----------------------------------------------------------------------|
+#|<version name> <number> - <maker of most of the code from that version>
+#|-----------------------------------------------------------------------|
+#|+/- <item that was added/taken away>
+#|* <planned>
+#|~ <bug>
+#|! <note>
+#|-----------------------------------------------------------------------|
+#|@<people who worked on it>
+#|-----------------------------------------------------------------------|
+#SCOPE Studios - "Impossible does not exist."
+#Head of programming: sandspro
+#Head of music: sandspro
+#Head of art: sandspro, cdt
+#Head of sound effects: cdt
+
+1.0 - _/_/2013
+----------------
++2D and 3D support
++sprite systems
++taskbar and window icon
++launcher
++launcher background
++text clicking support
++when hurt, hud blinks red
++fluid menu system animation
++if dead, screen cracks
++gun logic
++smaller expandable sub-menus
++model rendering
++healing and gaining energy
++multiplayer descriptions
++scroll bars
++supports dlc weapons
++tutorial at beginning of game
++recoil
++Standard Assault Rifle G2 model created
++Standard Pistol G2 model created
++Standard Assault Rifle G3 model created
++Standard Pistol G3 model created
++2D icons showing weapon
+*3D animations
+*enhanced menu opening animation (person lifts arm and clicks a screen)
+*login system
+*multiplayer game joining
+*local ip-based multiplayer
+*saving
+*sound track
+*update capabilities
+*basic terrain and collision detection
+*more gamepad control
+*gamepad support for XBOX360 controllers and PS3 controllers
+*enemy awareness level could be a meter or a eye that opens
+*better 2d weapon slot image
+*local multiplayer by ip address
+*weapon addon customization
+*armor customization
+*blender weapons get moved so that they can all be rendered at the same x, y, z
+*skeletal animations with ball, hinge, pivot joints and bones
+!Java is pass-by-reference
+!Blender planes don't render. Use F to add face
+~if you hold shooting while reload, it keeps reloading
+~odd clip behavior at animation end
+
+@sandspro
+
+1.5 - _/_/2013
+----------------
+*mutliplayer: team deathmatch, free-for-all
+
+@sandspro
+
+2.0 - _/_/2013
+----------------
+*multiplayer: capture the flag, capture-the-points, points-by-possession, knockout, gun-tag, assassin
+
+@sandspro
+
+2.5 - _/_/2013
+----------------
+*multiplayer: co-op zombies, free-for-all zombies
+
+@sandspro
+
+3.0 - _/_/2013
+----------------
+*multiplayer: co-op, survival
+
+@sandspro

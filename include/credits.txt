@@ -1,0 +1,33 @@
+SCOPE Studios - "Impossible doesn't exist"
+Head of programming: sandspro
+Head of music: sandspro
+Head of art: sandspro, cdt
+Head of sound effects: cdt
+Head of story design: sandspro
+Head of story editing: cdt
+Head of marketing: sandspro, cdt
+
+Programming team:
+-sandspro*
+
+Music team:
+-sandspro*
+-MTC
+
+Art team:
+-sandspro*
+-cdt*
+
+Sound effects team:
+-cdt*
+-sandspro
+
+Story design team:
+-sandspro*
+
+Story editing team:
+-cdt*
+
+Marketing team:
+-sandspro*
+-cdt*

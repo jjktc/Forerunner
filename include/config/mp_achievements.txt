@@ -1,0 +1,7 @@
+All{
+Nemesis-Kill the same person 5 times in a row if there is more than one enemy
+Spray and Pray-Shoot from the hip a full clip at an enemy
+Second Chance-Kill the person who shot you while down
+Unstoppable-Take heavy fire and still survive and kill the shooter
+Reaper-Kill 20 people in a row
+}

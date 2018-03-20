@@ -1,0 +1,15 @@
+Weapon[test_weapon] {
+var=test_weapon
+var=defaultGPos
+var=1
+var=null
+var=8
+var=null
+var=null
+var=model_standardassaultrifle.obj
+var=true
+var=15
+var=5
+var=150
+var=180
+}
