@@ -45,12 +45,12 @@ import scope.lwjgl.forerunner.state.States;
 import scope.lwjgl.forerunner.world.World;
 
 public class Camera {
-	
+
 	public float x, y, z;
 	public int fov, width, height;
 	public float zNear, zFar, pitch, yaw, roll, aspectRatio;
 	public float maxLookUp = 80, maxLookDown = -80;
-	
+
 	public Camera(int fov, int width, int height, float zNear, float zFar) {
 		this.fov = fov;
 		this.width = width;
@@ -62,51 +62,51 @@ public class Camera {
 		y = 0;
 		z = 0;
 	}
-	
+
 	public void init() {
 		x = World.player.x;
 		y = World.player.y;
 		z = World.player.z;
 	}
-	
+
 	public void reset() {
 		glRotatef(pitch, 1, 0, 0);
 		glRotatef(yaw, 0, 1, 0);
 		glRotatef(roll, 0, 0, 1);
 		glTranslatef(-x, -y, -z);
 	}
-	
+
 	public void apply() {
 		glRotatef(pitch, 1, 0, 0);
-        glRotatef(yaw, 0, 1, 0);
-        glRotatef(roll, 0, 0, 1);
-        glTranslatef(-x, -y, -z);
+		glRotatef(yaw, 0, 1, 0);
+		glRotatef(roll, 0, 0, 1);
+		glTranslatef(-x, -y, -z);
 	}
-	
+
 	public void update() {
-		if(!States.stateGame.paused) {
+		if (!States.stateGame.paused) {
 			processKeyboard();
-			if(Mouse.isGrabbed()) {
+			if (Mouse.isGrabbed()) {
 				float mouseDX = InputHandler.DX * 1 * 0.16f;
 				float mouseDY = -InputHandler.DY * 1 * 0.16f;
 				if (yaw + mouseDX >= 360) {
-				    yaw = yaw + mouseDX - 360;
+					yaw = yaw + mouseDX - 360;
 				} else if (yaw + mouseDX < 0) {
-				    yaw = 360 - yaw + mouseDX;
+					yaw = 360 - yaw + mouseDX;
 				} else {
-				    yaw += mouseDX;
+					yaw += mouseDX;
 				}
 				if (pitch - mouseDY >= maxLookDown && pitch - mouseDY <= maxLookUp) {
-				    pitch += -mouseDY;
+					pitch += -mouseDY;
 				} else if (pitch - mouseDY < maxLookDown) {
-				    pitch = maxLookDown;
+					pitch = maxLookDown;
 				} else if (pitch - mouseDY > maxLookUp) {
-				    pitch = maxLookUp;
+					pitch = maxLookUp;
 				}
 			}
 		}
 	}
-	
+
 	public void initOrtho() {
 		glEnable(GL_TEXTURE_2D);
 		glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
@@ -119,7 +119,7 @@ public class Camera {
 		glOrtho(0, width, height, 0, 1, -1);
 		glMatrixMode(GL_MODELVIEW);
 	}
-	
+
 	public void initPerspective() {
 		glMatrixMode(GL_PROJECTION);
 		glLoadIdentity();
@@ -135,16 +135,16 @@ public class Camera {
 		glEnable(GL_LIGHTING);
 		glEnable(GL_LIGHT0);
 		glEnable(GL_COLOR_MATERIAL);
-		glLightModel(GL_LIGHT_MODEL_AMBIENT, asFloatBuffer(new float[]{0.05f, 0.05f, 0.05f, 1f}));
+		glLightModel(GL_LIGHT_MODEL_AMBIENT, asFloatBuffer(new float[] { 0.05f, 0.05f, 0.05f, 1f }));
 		glLight(GL_LIGHT0, GL_POSITION, asFloatBuffer(Graphics.light.lightPosition));
 		glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
-		//glEnable(GL_CULL_FACE);
-		//glCullFace(GL_BACK);
+		// glEnable(GL_CULL_FACE);
+		// glCullFace(GL_BACK);
 	}
-	
+
 	public void setupOrtho() {
-		//glEnable(GL_DEPTH_TEST);
-		//glDisable(GL_CULL_FACE);
+		// glEnable(GL_DEPTH_TEST);
+		// glDisable(GL_CULL_FACE);
 		glDisable(GL_LIGHTING);
 		glDisable(GL_DEPTH_TEST);
 		glMatrixMode(GL_PROJECTION);
@@ -155,7 +155,7 @@ public class Camera {
 		glPushMatrix();
 		glLoadIdentity();
 	}
-	
+
 	public void setupPerspective() {
 		glMatrixMode(GL_PROJECTION);
 		glPopMatrix();
@@ -165,12 +165,12 @@ public class Camera {
 		glEnable(GL_LIGHTING);
 		glEnable(GL_LIGHT0);
 		glLight(GL_LIGHT0, GL_POSITION, asFloatBuffer(Graphics.light.lightPosition));
-		//World.player.selectedWeapon.shootFlash();
-		//glEnable(GL_CULL_FACE);
-		//glDisable(GL_DEPTH_TEST);
+		// World.player.selectedWeapon.shootFlash();
+		// glEnable(GL_CULL_FACE);
+		// glDisable(GL_DEPTH_TEST);
 		glLoadIdentity();
 	}
-	
+
 	public void processKeyboard() {
 		boolean keyUp = Keyboard.isKeyDown(Keyboard.KEY_W);
 		boolean keyDown = Keyboard.isKeyDown(Keyboard.KEY_S);
@@ -178,7 +178,7 @@ public class Camera {
 		boolean keyRight = Keyboard.isKeyDown(Keyboard.KEY_D);
 		boolean flyUp = Keyboard.isKeyDown(Keyboard.KEY_SPACE);
 		boolean flyDown = Keyboard.isKeyDown(Keyboard.KEY_LSHIFT);
-		
+
 		if (keyUp && keyRight && !keyLeft && !keyDown) {
 			moveFromLook((float) (0.02f * Time.delta), 0, (float) (-0.02f * Time.delta));
 		}
@@ -204,45 +204,45 @@ public class Camera {
 			moveFromLook((float) (0.02f * Time.delta), 0, 0);
 		}
 		if (flyUp && !flyDown) {
-	    	y += 0.02f * Time.delta;
+			y += 0.02f * Time.delta;
 		}
 		if (flyDown && !flyUp) {
 			y -= 0.02f * Time.delta;
 		}
-    }
+	}
 
-    public void moveFromLook(float dx, float dy, float dz) {
-    	float nX = this.x;
-    	float nY = this.y;
-    	float nZ = this.z;
-    	
-    	float hypotenuseX = dx;
-    	float adjacentX = hypotenuseX * (float) Math.cos(Math.toRadians(yaw - 90));
-    	float oppositeX = (float) Math.sin(Math.toRadians(yaw - 90)) * hypotenuseX;
-    	nZ += adjacentX;
-    	nX -= oppositeX;
-    	
-    	nY += dy;
-    	
-    	float hypotenuseZ = dz;
-    	float adjacentZ = hypotenuseZ * (float) Math.cos(Math.toRadians(yaw));
-    	float oppositeZ = (float) Math.sin(Math.toRadians(yaw)) * hypotenuseZ;
-    	nZ += adjacentZ;
-    	nX -= oppositeZ;
-    	
-    	World.player.x = nX;
-    	World.player.y = nY;
-    	World.player.z = nZ;
-    	this.x = nX;
-    	this.y = nY;
-    	this.z = nZ;
-    }
-    
-    public static FloatBuffer asFloatBuffer(float... values) {
-    	FloatBuffer buffer = BufferUtils.createFloatBuffer(values.length);
-    	buffer.put(values);
-    	buffer.flip();
-    	return buffer;
-    }
-    
+	public void moveFromLook(float dx, float dy, float dz) {
+		float nX = this.x;
+		float nY = this.y;
+		float nZ = this.z;
+
+		float hypotenuseX = dx;
+		float adjacentX = hypotenuseX * (float) Math.cos(Math.toRadians(yaw - 90));
+		float oppositeX = (float) Math.sin(Math.toRadians(yaw - 90)) * hypotenuseX;
+		nZ += adjacentX;
+		nX -= oppositeX;
+
+		nY += dy;
+
+		float hypotenuseZ = dz;
+		float adjacentZ = hypotenuseZ * (float) Math.cos(Math.toRadians(yaw));
+		float oppositeZ = (float) Math.sin(Math.toRadians(yaw)) * hypotenuseZ;
+		nZ += adjacentZ;
+		nX -= oppositeZ;
+
+		World.player.x = nX;
+		World.player.y = nY;
+		World.player.z = nZ;
+		this.x = nX;
+		this.y = nY;
+		this.z = nZ;
+	}
+
+	public static FloatBuffer asFloatBuffer(float... values) {
+		FloatBuffer buffer = BufferUtils.createFloatBuffer(values.length);
+		buffer.put(values);
+		buffer.flip();
+		return buffer;
+	}
+
 }

@@ -1,17 +1,15 @@
 package scope.lwjgl.forerunner.sprites;
 
 public class Sprites {
-	
+
 	public static Sprite title = new Sprite("resources/launcher/title.png", 0, 0, 183, 64);
 	public static Sprite launcher_bg = new Sprite("resources/launcher/launcher_bg.png", 0, 0, 800, 480);
 	public static Sprite stars = new Sprite("resources/launcher/stars.png", 0, 0, 800, 480);
 	public static Sprite bg_text = new Sprite("resources/launcher/bg_text.png", 0, 0, 64, 64);
 	public static Sprite bg_text2 = new Sprite("resources/launcher/bg_text2.png", 0, 0, 64, 64);
 	public static Sprite hex = new Sprite("resources/launcher/hex.png", 0, 0, 800, 480);
-	public static Sprite makers[] = {
-		new Sprite("resources/launcher/makers.png", 0, 0, 64, 64),
-		new Sprite("resources/launcher/makers.png", 64, 0, 64, 64),
-	};
+	public static Sprite makers[] = { new Sprite("resources/launcher/makers.png", 0, 0, 64, 64),
+			new Sprite("resources/launcher/makers.png", 64, 0, 64, 64), };
 	public static Sprite scopestudios = new Sprite("resources/launcher/scopestudios.png", 0, 0, 256, 256);
 	public static Sprite foreengine = new Sprite("resources/launcher/foreengine.png", 0, 0, 128, 128);
 	public static Sprite atb = new Sprite("resources/launcher/atb.png", 0, 0, 64, 64);
@@ -50,17 +48,15 @@ public class Sprites {
 	public static Sprite btn_help_hover = new Sprite("resources/launcher/help.png", 32, 0, 32, 32);
 	public static Sprite btn_help_clicked = new Sprite("resources/launcher/help.png", 0, 32, 32, 32);
 	public static Sprite grey_section = new Sprite("resources/launcher/grey_section.png", 0, 0, 600, 360);
-	public static Sprite[] mplayer_modes = {
-		new Sprite("resources/launcher/mplayer_modes.png", 0, 0, 256, 64),
-		new Sprite("resources/launcher/mplayer_modes.png", 0, 64, 256, 64),
-		new Sprite("resources/launcher/mplayer_modes.png", 0, 128, 256, 64),
-		new Sprite("resources/launcher/mplayer_modes.png", 0, 192, 256, 64),
-		new Sprite("resources/launcher/mplayer_modes.png", 0, 256, 256, 64),
-		new Sprite("resources/launcher/mplayer_modes.png", 0, 320, 256, 64),
-		new Sprite("resources/launcher/mplayer_modes.png", 0, 384, 256, 64),
-		new Sprite("resources/launcher/mplayer_modes.png", 0, 448, 256, 64),
-		new Sprite("resources/launcher/mplayer_modes.png", 256, 0, 256, 64)
-	};
+	public static Sprite[] mplayer_modes = { new Sprite("resources/launcher/mplayer_modes.png", 0, 0, 256, 64),
+			new Sprite("resources/launcher/mplayer_modes.png", 0, 64, 256, 64),
+			new Sprite("resources/launcher/mplayer_modes.png", 0, 128, 256, 64),
+			new Sprite("resources/launcher/mplayer_modes.png", 0, 192, 256, 64),
+			new Sprite("resources/launcher/mplayer_modes.png", 0, 256, 256, 64),
+			new Sprite("resources/launcher/mplayer_modes.png", 0, 320, 256, 64),
+			new Sprite("resources/launcher/mplayer_modes.png", 0, 384, 256, 64),
+			new Sprite("resources/launcher/mplayer_modes.png", 0, 448, 256, 64),
+			new Sprite("resources/launcher/mplayer_modes.png", 256, 0, 256, 64) };
 	public static Sprite cube_btn = new Sprite("resources/gui/cube_btn.png", 0, 0, 64, 64);
 	public static Sprite cube_btn2 = new Sprite("resources/gui/cube_btn.png", 64, 0, 64, 64);
 	public static Sprite cube_btn3 = new Sprite("resources/gui/cube_btn.png", 0, 64, 64, 64);
@@ -89,7 +85,8 @@ public class Sprites {
 	public static Sprite mpTLoadouts = new Sprite("resources/multiplayer/maintab_icons.png", 32, 32, 32, 32);
 	public static Sprite mpTInfo = new Sprite("resources/multiplayer/maintab_icons.png", 64, 0, 32, 32);
 	public static Sprite mpTB = new Sprite("resources/multiplayer/tab_bg.png", 0, 0, 800, 433);
-	public static Sprite gi_standardassaultrifle = new Sprite("resources/hud/weapon/standardassaultrifle.png", 0, 0, 64, 32);
+	public static Sprite gi_standardassaultrifle = new Sprite("resources/hud/weapon/standardassaultrifle.png", 0, 0, 64,
+			32);
 	public static Sprite gi_standardpistol = new Sprite("resources/hud/weapon/standardpistol.png", 0, 0, 64, 32);
 	public static Sprite damage_direction = new Sprite("resources/hud/damage_direction.png", 0, 0, 256, 64);
 	public static Sprite damage_direction2 = new Sprite("resources/hud/damage_direction2.png", 0, 0, 128, 48);
@@ -97,5 +94,5 @@ public class Sprites {
 	public static Sprite awarenessLevel1 = new Sprite("resources/hud/awareness_levels.png", 0, 0, 8, 16);
 	public static Sprite awarenessLevel2 = new Sprite("resources/hud/awareness_levels.png", 0, 16, 8, 16);
 	public static Sprite awarenessLevel3 = new Sprite("resources/hud/awareness_levels.png", 8, 0, 8, 16);
-	
+
 }

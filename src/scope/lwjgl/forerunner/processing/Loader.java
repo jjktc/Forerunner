@@ -8,7 +8,7 @@ import scope.lwjgl.forerunner.input.Gamepad;
 import scope.lwjgl.forerunner.world.World;
 
 public class Loader {
-	
+
 	public static void init() {
 		Save.start();
 		TXTHandler.vers();
@@ -19,9 +19,9 @@ public class Loader {
 		Credits.init();
 		Gamepad.initiate();
 	}
-	
+
 	public static void load() {
-		
+
 	}
 
 }

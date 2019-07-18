@@ -3,7 +3,7 @@ package scope.lwjgl.forerunner;
 import org.lwjgl.Sys;
 
 public class Time {
-	
+
 	public static long time;
 	public static long lastFrame;
 	public static long lastFPS;
@@ -15,15 +15,15 @@ public class Time {
 	public static int total = 0;
 
 	public static long getTime() {
-        return (Sys.getTime() * 1000) / Sys.getTimerResolution();
-    }
+		return (Sys.getTime() * 1000) / Sys.getTimerResolution();
+	}
 
-    public static void update() {
-        delta = (double) time1 - (double) time2;
-        anim = (int) (time1 - time2);
-        total += anim;
-    }
-    
+	public static void update() {
+		delta = (double) time1 - (double) time2;
+		anim = (int) (time1 - time2);
+		total += anim;
+	}
+
 	public static long updateFPS() {
 		if (getTime() - lastFPS > 1000) {
 			fps = frames;

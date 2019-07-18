@@ -9,7 +9,7 @@ import scope.lwjgl.forerunner.sprites.Sprites;
 import scope.lwjgl.forerunner.state.State;
 
 public class StateHelp extends State {
-	
+
 	public List<String> lines = new ArrayList<String>();
 
 	public StateHelp(boolean viewable) {
@@ -19,11 +19,11 @@ public class StateHelp extends State {
 		lines.add("   prone:lcontrol, action:alt, switch weapon:tab, roll:run+crouch");
 		lines.add("   dive:run+prone, hit:lclick, use:rclick, turn:move mouse");
 	}
-	
+
 	public void update() {
-		
+
 	}
-	
+
 	public void render() {
 		Sprites.bg_text.render(0, Main.height / 8 * 3, Main.width, Main.height / 8 * 5, 1, 1, 1, 0.5f);
 		Fonts.fontDefault.drawLines(lines, 8, Main.height / 8 * 3 + 4, 1);

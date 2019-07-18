@@ -154,16 +154,16 @@ public class InputHandler {
 	/* /KEYBOARD/ */
 
 	public static void init() {
-		for(int i = 0; i < 219; i++) {
+		for (int i = 0; i < 219; i++) {
 			keyboard.add(i, new Key());
 		}
 	}
-	
+
 	public static void update() {
 		mouseRefresh();
 		keyboardRefresh();
 		Gamepad.update();
-		
+
 		processInput();
 	}
 
@@ -176,35 +176,35 @@ public class InputHandler {
 		mbRight.active = mouseRightButton;
 		mbLeft.update();
 		mbRight.update();
-		if(Mouse.isGrabbed()) {
+		if (Mouse.isGrabbed()) {
 			DX = Mouse.getDX() * Main.mouseSpeed * 0.16f;
-	        DY = -(Mouse.getDY() * Main.mouseSpeed * 0.16f);
+			DY = -(Mouse.getDY() * Main.mouseSpeed * 0.16f);
 		}
 	}
 
 	public static void keyboardRefresh() {
-		for(int i = 0; i < 219; i++) {
+		for (int i = 0; i < 219; i++) {
 			keyboard.get(i).active = Keyboard.isKeyDown(i);
 			keyboard.get(i).update();
 		}
 	}
 
 	public static void processInput() {
-        if(mouseRightButton) {
+		if (mouseRightButton) {
 		}
-		if(mouseLeftButton) {
+		if (mouseLeftButton) {
 		}
-		/*if(clicked(KEY_DELETE)) {
-			ScreenShot.takeScreenShot("test.png", "PNG");
-		}*/
+		/*
+		 * if(clicked(KEY_DELETE)) { ScreenShot.takeScreenShot("test.png", "PNG"); }
+		 */
 	}
-	
+
 	public static boolean active(int i) {
 		return keyboard.get(i).active;
 	}
-	
+
 	public static boolean clicked(int i) {
 		return keyboard.get(i).clicked;
 	}
-	
+
 }

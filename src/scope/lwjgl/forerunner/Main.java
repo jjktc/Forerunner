@@ -22,7 +22,7 @@ import scope.lwjgl.forerunner.sound.Sound;
 import scope.lwjgl.forerunner.sound.Sounds;
 
 public class Main {
-	
+
 	public static int width = 800;
 	public static int height = 480;
 	public static String title = "Forerunner", version = "";
@@ -30,7 +30,7 @@ public class Main {
 	public static boolean runningL = false;
 	public static boolean runningB = true;
 	public static float mouseSpeed = 2.0f;
-	
+
 	public Main() {
 		try {
 			Time.lastFPS = Time.getTime();
@@ -40,157 +40,157 @@ public class Main {
 			Loader.init();
 			Loader.load();
 			Mouse.setGrabbed(false);
-		} catch(Exception e) {
+		} catch (Exception e) {
 			System.err.println("Failed to initialize Display!!! Error: " + e.getMessage());
 			e.printStackTrace();
 			System.exit(1);
 		}
-		
+
 		init(0);
-		
+
 		Sounds.first_flight.playE(1f, 0.5f);
-		
-		while(runningB) {
+
+		while (runningB) {
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-			
+
 			updateB();
-			
+
 			SoundStore.get().poll(0);
-			
+
 			renderB();
-			
+
 			Time.updateFPS();
-			
+
 			Display.sync(60);
 			Display.update();
-			
-			if(Display.isCloseRequested()) {
+
+			if (Display.isCloseRequested()) {
 				kill();
 			}
 		}
-		
-		//Sounds.first_flight.playE(0.6f, 0.5f);
-		
-		while(runningL) {
+
+		// Sounds.first_flight.playE(0.6f, 0.5f);
+
+		while (runningL) {
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-			
+
 			updateL();
-			
+
 			SoundStore.get().poll(0);
-			
+
 			renderL();
-			
+
 			Time.updateFPS();
-			
+
 			Display.sync(60);
 			Display.update();
-			
-			if(Display.isCloseRequested()) {
+
+			if (Display.isCloseRequested()) {
 				kill();
 			}
 		}
-		
+
 		Sound.stopAll();
 		init(1);
 		Mouse.setGrabbed(true);
-		
-		while(running) {
+
+		while (running) {
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-			
+
 			update();
-			
+
 			SoundStore.get().poll(0);
-			
+
 			render();
-			
+
 			Time.updateFPS();
-			
+
 			Display.sync(60);
 			Display.update();
-			
-			if(Display.isCloseRequested()) {
+
+			if (Display.isCloseRequested()) {
 				kill();
 			}
 		}
-		
+
 		Sound.stopAll();
-		
+
 		Cleaner.clean();
-		
+
 		Mouse.destroy();
 		Keyboard.destroy();
 		AL.destroy();
 		Display.destroy();
-		
+
 		System.exit(0);
 	}
-	
+
 	public static void init(int state) {
-		if(state == 0) {
+		if (state == 0) {
 			Graphics.camera.initOrtho();
-		} else if(state == 1) {
+		} else if (state == 1) {
 			Graphics.camera.initPerspective();
 		}
 	}
-	
+
 	public static void alwaysUpdate() {
 		Time.update();
 		InputHandler.update();
 	}
-	
+
 	public static void update() {
 		Time.time1 = Time.getTime();
 		alwaysUpdate();
 		Graphics.update();
 		Time.time2 = Time.time1;
 	}
-	
+
 	public static void render() {
 		Graphics.render();
 	}
-	
+
 	public static void updateL() {
 		Time.time1 = Time.getTime();
 		alwaysUpdate();
 		LauncherGraphics.update();
 		Time.time2 = Time.time1;
 	}
-	
+
 	public static void renderL() {
 		LauncherGraphics.render();
 	}
-	
+
 	public static void updateB() {
 		Time.time1 = Time.getTime();
 		alwaysUpdate();
 		BriefGraphics.update();
 		Time.time2 = Time.time1;
 	}
-	
+
 	public static void renderB() {
 		BriefGraphics.render();
 	}
-	
+
 	public static void kill() {
 		running = false;
 		runningL = false;
 		runningB = false;
 	}
-	
+
 	public static void startGame() {
 		running = true;
 		runningL = false;
 		runningB = false;
 	}
-	
+
 	public static void start() {
 		try {
 			new Main();
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static void main(String[] args) {
 		try {
 			Display.setResizable(false);
@@ -201,7 +201,7 @@ public class Main {
 			Display.create();
 			Mouse.create();
 			Keyboard.create();
-		} catch(Exception e) {
+		} catch (Exception e) {
 			System.err.println("Failed to initialize Display!!! Error: " + e.getMessage());
 			e.printStackTrace();
 			System.exit(1);

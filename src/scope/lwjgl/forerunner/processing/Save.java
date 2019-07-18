@@ -3,12 +3,12 @@ package scope.lwjgl.forerunner.processing;
 import java.io.File;
 
 public class Save {
-	
+
 	public static void start() {
 		FileSystem.gethome();
 		FileSystem.getstatus();
-		if(FileSystem.newuser) {
-			if(!new File(FileSystem.home.replace(".Forerunner", "")).exists()) {
+		if (FileSystem.newuser) {
+			if (!new File(FileSystem.home.replace(".Forerunner", "")).exists()) {
 				FileSystem.newDirs(FileSystem.home.replace(".Forerunner", ""));
 			}
 			FileSystem.mkdirs();
@@ -24,15 +24,15 @@ public class Save {
 			createFile(new File(FileSystem.home + "/bin/credits.txt"));
 			createFile(new File(FileSystem.home + "/bin/critics.txt"));
 		}
-		
+
 	}
-	
+
 	public static void save() {
-		
+
 	}
-	
+
 	public static void createFile(File file) {
-		if(FileSystem.home.equals("UNKNOWN") || FileSystem.home.isEmpty()) {
+		if (FileSystem.home.equals("UNKNOWN") || FileSystem.home.isEmpty()) {
 			FileSystem.gethome();
 		}
 		try {
@@ -42,7 +42,7 @@ public class Save {
 			} else {
 				System.err.println("File: " + file.toString() + " not created");
 			}
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}

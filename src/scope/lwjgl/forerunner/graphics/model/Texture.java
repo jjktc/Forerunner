@@ -3,21 +3,20 @@ package scope.lwjgl.forerunner.graphics.model;
 import org.lwjgl.opengl.GL11;
 
 /**
- * A texture to be bound within LWJGL. This object is responsible for 
- * keeping track of a given OpenGL texture and for calculating the
- * texturing mapping coordinates of the full image.
+ * A texture to be bound within LWJGL. This object is responsible for keeping
+ * track of a given OpenGL texture and for calculating the texturing mapping
+ * coordinates of the full image.
  * 
- * Since textures need to be powers of 2 the actual texture may be
- * considerably bigged that the source image and hence the texture
- * mapping coordinates need to be adjusted to matchup drawing the
- * sprite against the texture.
+ * Since textures need to be powers of 2 the actual texture may be considerably
+ * bigged that the source image and hence the texture mapping coordinates need
+ * to be adjusted to matchup drawing the sprite against the texture.
  *
  * @author Kevin Glass
  * @author Brian Matzon
  */
 public class Texture {
     /** The GL target type */
-    private int target; 
+    private int target;
     /** The GL texture ID */
     private int textureID;
     /** The height of the image */
@@ -32,27 +31,27 @@ public class Texture {
     private float widthRatio;
     /** The ratio of the height of the image to the texture */
     private float heightRatio;
-    
+
     /**
      * Create a new texture
      *
-     * @param target The GL target 
+     * @param target    The GL target
      * @param textureID The GL texture ID
      */
-    public Texture(int target,int textureID) {
+    public Texture(int target, int textureID) {
         this.target = target;
         this.textureID = textureID;
     }
-    
+
     /**
      * Bind the specified GL context to a texture
      *
      * @param gl The GL context to bind to
      */
     public void bind() {
-      GL11.glBindTexture(target, textureID); 
+        GL11.glBindTexture(target, textureID);
     }
-    
+
     /**
      * Set the height of the image
      *
@@ -62,7 +61,7 @@ public class Texture {
         this.height = height;
         setHeight();
     }
-    
+
     /**
      * Set the width of the image
      *
@@ -72,7 +71,7 @@ public class Texture {
         this.width = width;
         setWidth();
     }
-    
+
     /**
      * Get the height of the original image
      *
@@ -81,8 +80,8 @@ public class Texture {
     public int getImageHeight() {
         return height;
     }
-    
-    /** 
+
+    /**
      * Get the width of the original image
      *
      * @return The width of the original image
@@ -90,7 +89,7 @@ public class Texture {
     public int getImageWidth() {
         return width;
     }
-    
+
     /**
      * Get the height of the physical texture
      *
@@ -99,7 +98,7 @@ public class Texture {
     public float getHeight() {
         return heightRatio;
     }
-    
+
     /**
      * Get the width of the physical texture
      *
@@ -108,9 +107,9 @@ public class Texture {
     public float getWidth() {
         return widthRatio;
     }
-    
+
     /**
-     * Set the height of this texture 
+     * Set the height of this texture
      *
      * @param texHeight The height of the texture
      */
@@ -118,9 +117,9 @@ public class Texture {
         this.texHeight = texHeight;
         setHeight();
     }
-    
+
     /**
-     * Set the width of this texture 
+     * Set the width of this texture
      *
      * @param texWidth The width of the texture
      */
@@ -128,24 +127,22 @@ public class Texture {
         this.texWidth = texWidth;
         setWidth();
     }
-    
+
     /**
-     * Set the height of the texture. This will update the
-     * ratio also.
+     * Set the height of the texture. This will update the ratio also.
      */
     private void setHeight() {
         if (texHeight != 0) {
-            heightRatio = ((float) height)/texHeight;
+            heightRatio = ((float) height) / texHeight;
         }
     }
-    
+
     /**
-     * Set the width of the texture. This will update the
-     * ratio also.
+     * Set the width of the texture. This will update the ratio also.
      */
     private void setWidth() {
         if (texWidth != 0) {
-            widthRatio = ((float) width)/texWidth;
+            widthRatio = ((float) width) / texWidth;
         }
     }
 }

@@ -9,7 +9,8 @@ import static org.lwjgl.opengl.GL11.*;
 /**
  * A camera set in 3D perspective.
  *
- * @author Oskar Veerhoek, author of TheCodingUniverse (www.youtube.com/thecodinguniverse)
+ * @author Oskar Veerhoek, author of TheCodingUniverse
+ *         (www.youtube.com/thecodinguniverse)
  */
 public final class Camera {
 
@@ -25,8 +26,9 @@ public final class Camera {
     private float zFar = 100f;
 
     /**
-     * Creates a new camera with the given aspect ratio.
-     * It's located at [0 0 0] with the orientation [0 0 0]. It has a zNear of 0.3, a zFar of 100.0, and an fov of 90.
+     * Creates a new camera with the given aspect ratio. It's located at [0 0 0]
+     * with the orientation [0 0 0]. It has a zNear of 0.3, a zFar of 100.0, and an
+     * fov of 90.
      *
      * @param aspectRatio the aspect ratio (width/height) of the camera
      */
@@ -107,14 +109,16 @@ public final class Camera {
     }
 
     /**
-     * Processes mouse input and converts it in to camera movement using the mouseSpeed value.
+     * Processes mouse input and converts it in to camera movement using the
+     * mouseSpeed value.
      *
      * @param mouseSpeed  the speed (sensitity) of the mouse
      * @param maxLookUp   the maximum angle at which you can look up
      * @param maxLookDown the maximum angle at which you can look down
      */
     public void processMouse(float mouseSpeed, float maxLookUp, float maxLookDown) {
-        if (!Mouse.isGrabbed()) return;
+        if (!Mouse.isGrabbed())
+            return;
         float mouseDX = Mouse.getDX() * mouseSpeed * 0.16f;
         float mouseDY = Mouse.getDY() * mouseSpeed * 0.16f;
         if (yaw + mouseDX >= 360) {
@@ -124,8 +128,7 @@ public final class Camera {
         } else {
             yaw += mouseDX;
         }
-        if (pitch - mouseDY >= maxLookDown
-                && pitch - mouseDY <= maxLookUp) {
+        if (pitch - mouseDY >= maxLookDown && pitch - mouseDY <= maxLookUp) {
             pitch += -mouseDY;
         } else if (pitch - mouseDY < maxLookDown) {
             pitch = maxLookDown;
@@ -232,7 +235,8 @@ public final class Camera {
     }
 
     public void applyModelviewMatrix(boolean resetMatrix) {
-        if (resetMatrix) glLoadIdentity();
+        if (resetMatrix)
+            glLoadIdentity();
         glRotatef(pitch, 1, 0, 0);
         glRotatef(yaw, 0, 1, 0);
         glRotatef(roll, 0, 0, 1);
@@ -321,11 +325,8 @@ public final class Camera {
 
     @Override
     public String toString() {
-        return "Camera [x=" + x + ", y=" + y + ", z=" + z + ", pitch=" + pitch
-                + ", yaw=" + yaw + ", roll=" + roll + ", fov=" + fov
-                + ", aspectRatio=" + aspectRatio + ", zNear=" + zNear
-                + ", zFar=" + zFar + "]";
+        return "Camera [x=" + x + ", y=" + y + ", z=" + z + ", pitch=" + pitch + ", yaw=" + yaw + ", roll=" + roll
+                + ", fov=" + fov + ", aspectRatio=" + aspectRatio + ", zNear=" + zNear + ", zFar=" + zFar + "]";
     }
-
 
 }

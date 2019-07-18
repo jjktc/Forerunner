@@ -15,7 +15,7 @@ import static org.lwjgl.opengl.GL11.glClear;
 public class SampleProgram {
 
     private static final String WINDOW_TITLE = "Sample Program";
-    private static final int[] WINDOW_DIMENSIONS = {640, 480};
+    private static final int[] WINDOW_DIMENSIONS = { 640, 480 };
 
     private static void render() {
         glClear(GL_COLOR_BUFFER_BIT); // | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT
@@ -41,10 +41,10 @@ public class SampleProgram {
     }
 
     private static void setUpStates() {
-//        glEnable(GL_DEPTH_TEST);
-//        glEnable(GL_LIGHTING);
-//        glEnable(GL_BLEND);
-//        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        // glEnable(GL_DEPTH_TEST);
+        // glEnable(GL_LIGHTING);
+        // glEnable(GL_BLEND);
+        // glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     }
 
     private static void update() {

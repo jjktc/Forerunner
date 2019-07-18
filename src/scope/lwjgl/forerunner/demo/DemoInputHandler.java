@@ -11,7 +11,7 @@ import scope.lwjgl.forerunner.input.Key;
 import scope.lwjgl.forerunner.input.MouseButton;
 
 public class DemoInputHandler {
-	
+
 	/* MOUSE */
 	public static float mouseXPos;
 	public static float mouseYPos;
@@ -156,15 +156,15 @@ public class DemoInputHandler {
 	/* /KEYBOARD/ */
 
 	public static void init() {
-		for(int i = 0; i < 219; i++) {
+		for (int i = 0; i < 219; i++) {
 			keyboard.add(i, new Key());
 		}
 	}
-	
+
 	public static void update() {
 		mouseRefresh();
 		keyboardRefresh();
-		
+
 		processInput();
 	}
 
@@ -177,29 +177,29 @@ public class DemoInputHandler {
 		mbRight.active = mouseRightButton;
 		mbLeft.update();
 		mbRight.update();
-		if(Mouse.isGrabbed()) {
+		if (Mouse.isGrabbed()) {
 			DX = Mouse.getDX() * Main.mouseSpeed * 0.16f;
-	        DY = -(Mouse.getDY() * Main.mouseSpeed * 0.16f);
+			DY = -(Mouse.getDY() * Main.mouseSpeed * 0.16f);
 		}
 	}
 
 	public static void keyboardRefresh() {
-		for(int i = 0; i < 219; i++) {
+		for (int i = 0; i < 219; i++) {
 			keyboard.get(i).active = Keyboard.isKeyDown(i);
 			keyboard.get(i).update();
 		}
 	}
 
 	public static void processInput() {
-        if(mbRight.clicked) {
-        	Mouse.setGrabbed(!Mouse.isGrabbed());
-        }
+		if (mbRight.clicked) {
+			Mouse.setGrabbed(!Mouse.isGrabbed());
+		}
 	}
-	
+
 	public static boolean active(int i) {
 		return keyboard.get(i).active;
 	}
-	
+
 	public static boolean clicked(int i) {
 		return keyboard.get(i).clicked;
 	}

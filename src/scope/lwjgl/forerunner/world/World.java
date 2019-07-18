@@ -15,31 +15,31 @@ import scope.lwjgl.forerunner.game.entities.MobPlayer;
 import scope.lwjgl.forerunner.game.entity.EntityMob;
 
 public class World {
-	
+
 	public static List<EntityMob> mobs = new ArrayList<EntityMob>();
 	public static MobPlayer player = new MobPlayer();
 	public static float gravity = 9.8f;
-	
+
 	public static void init() {
 		player.init();
 	}
-	
+
 	public static void update() {
-		
+
 	}
-	
+
 	public static void render() {
 		GL11.glColor4f(1, 1, 1, 1);
 		glBegin(GL_QUADS);
-        glTexCoord2f(0, 0);
-        glVertex3f(-10, -2, -10);
-        glTexCoord2f(0, 10 * 10 * 0.2f);
-        glVertex3f(-10, -2, 10);
-        glTexCoord2f(10 * 10 * 0.2f, 10 * 10 * 0.2f);
-        glVertex3f(10, -2, 10);
-        glTexCoord2f(10 * 10 * 0.2f, 0);
-        glVertex3f(10, -2, -10);
-        glEnd();
+		glTexCoord2f(0, 0);
+		glVertex3f(-10, -2, -10);
+		glTexCoord2f(0, 10 * 10 * 0.2f);
+		glVertex3f(-10, -2, 10);
+		glTexCoord2f(10 * 10 * 0.2f, 10 * 10 * 0.2f);
+		glVertex3f(10, -2, 10);
+		glTexCoord2f(10 * 10 * 0.2f, 0);
+		glVertex3f(10, -2, -10);
+		glEnd();
 	}
-	
+
 }

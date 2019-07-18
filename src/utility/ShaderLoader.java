@@ -9,7 +9,6 @@ import java.io.IOException;
 import static org.lwjgl.opengl.GL11.GL_FALSE;
 import static org.lwjgl.opengl.GL20.*;
 
-
 public class ShaderLoader {
     public static int loadShaderPair(String vertexShaderLocation, String fragmentShaderLocation) {
         int shaderProgram = glCreateProgram();
@@ -18,8 +17,7 @@ public class ShaderLoader {
         StringBuilder vertexShaderSource = new StringBuilder();
         StringBuilder fragmentShaderSource = new StringBuilder();
         try {
-            BufferedReader reader = new BufferedReader(new FileReader(
-                    vertexShaderLocation));
+            BufferedReader reader = new BufferedReader(new FileReader(vertexShaderLocation));
             String line;
             while ((line = reader.readLine()) != null) {
                 vertexShaderSource.append(line).append('\n');
@@ -31,8 +29,7 @@ public class ShaderLoader {
             System.exit(1);
         }
         try {
-            BufferedReader reader = new BufferedReader(new FileReader(
-                    fragmentShaderLocation));
+            BufferedReader reader = new BufferedReader(new FileReader(fragmentShaderLocation));
             String line;
             while ((line = reader.readLine()) != null) {
                 fragmentShaderSource.append(line).append('\n');
@@ -47,15 +44,13 @@ public class ShaderLoader {
         glShaderSource(vertexShader, vertexShaderSource);
         glCompileShader(vertexShader);
         if (glGetShader(vertexShader, GL_COMPILE_STATUS) == GL_FALSE) {
-            System.err
-                    .println("Vertex shader wasn't able to be compiled correctly. Error log:");
+            System.err.println("Vertex shader wasn't able to be compiled correctly. Error log:");
             System.err.println(glGetShaderInfoLog(vertexShader, 1024));
         }
         glShaderSource(fragmentShader, fragmentShaderSource);
         glCompileShader(fragmentShader);
         if (glGetShader(fragmentShader, GL_COMPILE_STATUS) == GL_FALSE) {
-            System.err
-                    .println("Fragment shader wasn't able to be compiled correctly. Error log:");
+            System.err.println("Fragment shader wasn't able to be compiled correctly. Error log:");
             System.err.println(glGetShaderInfoLog(fragmentShader, 1024));
         }
         glAttachShader(shaderProgram, vertexShader);
